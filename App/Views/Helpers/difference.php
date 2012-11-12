@@ -18,7 +18,7 @@ class DifferenceHelper extends AppHelper {
     function compare($baseline = 0, $comparison = 0,$precision=2) {
       $difference = $baseline - $comparison;
       $prefix = ($difference>0) ? '+' : '';
-      return '<span style="color:' . (($difference>0) ? '#080' : '#800') . '">' . $prefix . round($difference,$precision) . '</span>';
+      return ($difference==0) ? '<span style="color:#888">-</span>' : '<span style="color:' . (($difference>0) ? '#080' : '#800') . '">' . $prefix . round($difference,$precision) . '</span>';
     }
 }
 
